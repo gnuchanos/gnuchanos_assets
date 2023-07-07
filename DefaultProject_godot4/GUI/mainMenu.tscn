@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b34attdh7pjjg"]
+
+[ext_resource type="Script" path="res://GUI/Scripts/mainMenu.gd" id="1_f6yvs"]
+[ext_resource type="FontFile" uid="uid://bkmv735h5o1rn" path="res://font/FreeSans.ttf" id="2_lyr7x"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f6yvs")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 418.0
+offset_right = 461.0
+offset_bottom = 511.0
+theme_override_fonts/font = ExtResource("2_lyr7x")
+theme_override_font_sizes/font_size = 76
+text = "Start Game"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
