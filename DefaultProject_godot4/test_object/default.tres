@@ -1,7 +1,8 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://7nkkulr1oy5m"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bfbce2ckkk2w1"]
 
-[ext_resource type="Texture2D" uid="uid://cxymc43enmmf" path="res://test_object/rm301-eye-06.jpg" id="1_jslxa"]
+[ext_resource type="Texture2D" uid="uid://bwp4w07ng2fow" path="res://test_object/default.jpg" id="1_mao5f"]
 
 [resource]
-diffuse_mode = 3
-albedo_texture = ExtResource("1_jslxa")
+albedo_texture = ExtResource("1_mao5f")
+normal_enabled = true
+normal_texture = ExtResource("1_mao5f")

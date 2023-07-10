@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b34attdh7pjjg"]
+[gd_scene load_steps=5 format=3 uid="uid://b34attdh7pjjg"]
 
 [ext_resource type="Script" path="res://GUI/Scripts/mainMenu.gd" id="1_f6yvs"]
 [ext_resource type="FontFile" uid="uid://bkmv735h5o1rn" path="res://font/FreeSans.ttf" id="2_lyr7x"]
+[ext_resource type="Texture2D" uid="uid://5agox6xqhl8c" path="res://images/displayManager.png" id="2_uw82l"]
+[ext_resource type="Theme" uid="uid://b4cb1uqxdbt1n" path="res://gnuchanos_Theme.tres" id="3_qrie5"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,14 +14,31 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f6yvs")
 
+[node name="DisplayManager" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("2_uw82l")
+metadata/_edit_lock_ = true
+
 [node name="Start" type="Button" parent="."]
 layout_mode = 0
 offset_left = 73.0
 offset_top = 418.0
 offset_right = 461.0
 offset_bottom = 511.0
+theme = ExtResource("3_qrie5")
 theme_override_fonts/font = ExtResource("2_lyr7x")
 theme_override_font_sizes/font_size = 76
 text = "Start Game"
+
+[node name="testButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 416.0
+offset_right = 908.0
+offset_bottom = 509.0
+theme = ExtResource("3_qrie5")
+theme_override_fonts/font = ExtResource("2_lyr7x")
+theme_override_font_sizes/font_size = 76
+text = "Test Button"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

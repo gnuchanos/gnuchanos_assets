@@ -1,11 +1,15 @@
 extends CharacterBody3D
 
+# duck
+var duck = false
+var duckRayHit = false
+
 # hareket ve koşu
 var speed
 const WALK_SPEED = 5.0
-const  SPRINT_SPEED = 8.0
+const  SPRINT_SPEED = 10.0
 
-const JUMP_VELOCITY = 3.5
+const JUMP_VELOCITY = 4.5
 const  MOUSE_SENSITIVTY = 0.01
 
 @onready var head = $head
@@ -32,9 +36,13 @@ func  _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * MOUSE_SENSITIVTY)
 		camera.rotate_x(-event.relative.y * MOUSE_SENSITIVTY)
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
+	######
 
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
-
+#test debug
+func  _process(_delta):
+	$debug.text = str(speed)
+	######
 
 func _physics_process(delta):
 	# gravty and jump
@@ -42,6 +50,24 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	######
+
+	# Duck
+	if Input.is_action_pressed("ctrl") and is_on_floor() and duck == false:
+		duck = true
+		$stand.scale.y = .2
+	elif Input.is_action_just_released("ctrl") and is_on_floor() and not $duckRay.is_colliding():
+		duck = false
+		$stand.scale.y = 1
+	elif Input.is_action_just_released("ctrl") and is_on_floor() and $duckRay.is_colliding():
+		duckRayHit = true
+
+	# if duckRay hit you can't stand
+	if duckRayHit == true and not $duckRay.is_colliding():
+		duckRayHit = false
+		duck = false
+		$stand.scale.y = 1
+	#########
 
 	# fast move
 	if Input.is_action_pressed("sprint") and is_on_floor():

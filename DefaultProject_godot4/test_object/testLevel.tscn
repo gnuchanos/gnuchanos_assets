@@ -1,32 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddabwnp6vq7vv"]
+[gd_scene load_steps=4 format=3 uid="uid://ba2s256vw84gi"]
 
-[ext_resource type="PackedScene" uid="uid://cvk1rv6efd3ap" path="res://player/fps.tscn" id="1_epv0d"]
-[ext_resource type="PackedScene" uid="uid://bjfu78mn16mou" path="res://test_object/blenderDefault.tscn" id="1_vscaa"]
-[ext_resource type="PackedScene" uid="uid://blsiruvdgg2rd" path="res://test_object/p0.tscn" id="3_vplp8"]
-[ext_resource type="PackedScene" uid="uid://lcf4aua7l87" path="res://test_object/door_test.tscn" id="4_e2eag"]
+[ext_resource type="PackedScene" uid="uid://cvk1rv6efd3ap" path="res://player/fps.tscn" id="1_5wb2i"]
+[ext_resource type="PackedScene" uid="uid://qypoth4ffkea" path="res://test_object/level1_.glb" id="2_62jh6"]
 
-[sub_resource type="Environment" id="Environment_lghep"]
+[sub_resource type="Environment" id="Environment_o2tqo"]
 background_mode = 1
 
-[node name="test" type="Node3D"]
+[node name="Node3D" type="Node3D"]
 
-[node name="blenderDefault" parent="." instance=ExtResource("1_vscaa")]
+[node name="FPS" parent="." instance=ExtResource("1_5wb2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.22409, 1.27083, 0)
 
-[node name="FPS" parent="." instance=ExtResource("1_epv0d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984847, 0.249209)
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08885, 10.7619, 7.45378)
+omni_range = 44.1351
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08885, 4.94776, -38.1498)
+omni_range = 44.1351
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75746, 10.7619, 7.45378)
+omni_range = 44.1351
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75746, 4.94776, -38.1498)
+omni_range = 44.1351
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_lghep")
+environment = SubResource("Environment_o2tqo")
 
-[node name="p1" parent="." instance=ExtResource("3_vplp8")]
-transform = Transform3D(0.425542, 0, 0, 0, 0.425542, 0, 0, 0, 0.425542, 3.22052, 1.05606, 3.7579)
-
-[node name="p3" parent="." instance=ExtResource("3_vplp8")]
-transform = Transform3D(0.425542, 0, 0, 0, 0.425542, 0, 0, 0, 0.425542, 3.22052, 1.05606, -1.65655)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.71636, 0)
-omni_range = 10.6544
-
-[node name="doorTest" parent="." instance=ExtResource("4_e2eag")]
-transform = Transform3D(0.788393, 0, 0, 0, 0.788393, 0, 0, 0, 1.23361, 3.29363, -0.0662135, 0.141662)
+[node name="level1_" parent="." instance=ExtResource("2_62jh6")]
