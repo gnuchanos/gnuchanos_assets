@@ -30,27 +30,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:Cube": {
-"generate/physics": true,
-"physics/shape_type": 2
-},
-"PATH:Cube_001": {
-"generate/physics": true,
-"physics/shape_type": 2
-},
-"PATH:Plane_001": {
-"generate/physics": true,
-"physics/shape_type": 2
-},
-"PATH:Plane_002": {
-"generate/physics": true,
-"physics/shape_type": 2
-},
-"PATH:Plane_003": {
-"generate/physics": true,
-"physics/shape_type": 2
-},
-"PATH:Plane_004": {
+"PATH:collider": {
 "generate/physics": true,
 "physics/shape_type": 2
 }
