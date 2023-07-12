@@ -9,22 +9,18 @@ background_mode = 1
 [node name="Node3D" type="Node3D"]
 
 [node name="FPS" parent="." instance=ExtResource("1_5wb2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.22409, 1.27083, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78446, 3.98981, 10.3155)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08885, 10.7619, 7.45378)
-omni_range = 44.1351
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08885, 4.94776, -38.1498)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64626, 10.7619, 7.45378)
 omni_range = 44.1351
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75746, 10.7619, 7.45378)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64626, 10.7619, -18.5462)
 omni_range = 44.1351
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75746, 4.94776, -38.1498)
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64626, 4.94776, -38.1498)
 omni_range = 44.1351
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

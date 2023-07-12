@@ -16,6 +16,8 @@ var fpsVar = {
 	"walkingSound":100,
 	"musicOff":true,
 	"effectOff":true,
+	
+	"musicName":"",
 }
 
 

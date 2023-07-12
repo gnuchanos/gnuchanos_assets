@@ -3,33 +3,25 @@
 [ext_resource path="res://FPS/FPS.gd" type="Script" id=1]
 [ext_resource path="res://FPS/HeadRaycast.gd" type="Script" id=2]
 [ext_resource path="res://font/OpenSans.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://music/music.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 0.5
+radius = 0.444
 height = 2.0
-
-[sub_resource type="CapsuleMesh" id=2]
-radius = 0.5
-mid_height = 2.0
 
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 3 )
 
 [node name="FPS" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53273, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31091, 0 )
 script = ExtResource( 1 )
 
 [node name="stand" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.180823, 0 )
 shape = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-visible = false
-mesh = SubResource( 2 )
-
 [node name="Head" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46349, 0 )
+transform = Transform( 0.99901, -0.00871823, 0.0436194, 0.00872654, 0.999962, 0, -0.0436177, 0.000380646, 0.999048, 0, 1.54452, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
 fov = 90.0
@@ -54,5 +46,4 @@ cast_to = Vector3( 0, 0.855, 0 )
 [node name="walkingSound" type="AudioStreamPlayer3D" parent="."]
 bus = "walk"
 
-[node name="music" type="AudioStreamPlayer3D" parent="."]
-bus = "music"
+[node name="music" parent="." instance=ExtResource( 4 )]
