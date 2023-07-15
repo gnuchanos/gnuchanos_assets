@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rangeEngine_oldblender.obj-680ddb431805f0eb9e5850c1b41b443d.mesh"
+
+[deps]
+
+files=[ "res://.import/rangeEngine_oldblender.obj-680ddb431805f0eb9e5850c1b41b443d.mesh" ]
+
+source_file="res://test3D/3d/rangeEngine_oldblender.obj"
+dest_files=[ "res://.import/rangeEngine_oldblender.obj-680ddb431805f0eb9e5850c1b41b443d.mesh", "res://.import/rangeEngine_oldblender.obj-680ddb431805f0eb9e5850c1b41b443d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

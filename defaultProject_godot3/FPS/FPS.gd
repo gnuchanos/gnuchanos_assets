@@ -65,7 +65,7 @@ func _physics_process(delta):
 	# Duck
 	if Input.is_action_pressed("ctrl") and is_on_floor() and duck == false:
 		duck = true
-		$stand.scale.y = .01
+		$stand.scale.y = .02
 	elif Input.is_action_just_released("ctrl") and is_on_floor() and not DuckRay.is_colliding():
 		duck = false
 		$stand.scale.y = 1
@@ -78,6 +78,8 @@ func _physics_process(delta):
 		duck = false
 		$stand.scale.y = 1
 	#########
+
+
 
 	# fast move
 	if Input.is_action_pressed("sprint") and is_on_floor():

@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://test3D/level1_.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FPS/FPS.tscn" type="PackedScene" id=2]
+[ext_resource path="res://test3D/3d/sketchup.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://test3D/3d/blender3-6.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://test3D/3d/rangeEngine_oldblender.obj" type="ArrayMesh" id=5]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -61,3 +64,20 @@ transform = Transform( 0.170942, 0, 0, 0, 1, 0, -8.88178e-16, 0, 1, 0, 0, 0 )
 mesh = SubResource( 3 )
 skeleton = NodePath("../body")
 material/0 = SubResource( 5 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.49815, 3.82857 )
+
+[node name="sketchup" type="MeshInstance" parent="Spatial"]
+transform = Transform( 0.00460728, 0, 0, 0, 0.00562088, 0, 0, 0, 0.00562088, 3.95464, -0.862944, 0.963853 )
+mesh = ExtResource( 3 )
+skeleton = NodePath("../blender3-6")
+
+[node name="blender3-6" type="MeshInstance" parent="Spatial"]
+transform = Transform( 0.2, 0, 0, 0, 0.244, 0, 0, 0, 0.244, 0, 0, 0 )
+mesh = ExtResource( 4 )
+
+[node name="rangeEngine_oldblender" type="MeshInstance" parent="Spatial"]
+transform = Transform( 0.2, 0, 0, 0, 0.244, 0, 0, 0, 0.244, 2.52496, 0, 0 )
+mesh = ExtResource( 5 )
+skeleton = NodePath("../blender3-6")

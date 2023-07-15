@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/blender3-6.obj-7b7f5a38530854c8bea826434f55285f.mesh"
+
+[deps]
+
+files=[ "res://.import/blender3-6.obj-7b7f5a38530854c8bea826434f55285f.mesh" ]
+
+source_file="res://test3D/3d/blender3-6.obj"
+dest_files=[ "res://.import/blender3-6.obj-7b7f5a38530854c8bea826434f55285f.mesh", "res://.import/blender3-6.obj-7b7f5a38530854c8bea826434f55285f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
