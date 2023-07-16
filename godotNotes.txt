@@ -18,4 +18,4 @@ func _process(delta):
 			if Input.is_action_pressed("left_m"):
 				collider.rotation.y += 1 * delta # rotate
                         .scale += Vector3(0, 0.1, 0) #scale
-                        .position.x += 1 * delta # move #position for godot4
+                        .position.x += 1 * delta # move #translation.z godot3 | position is godot4

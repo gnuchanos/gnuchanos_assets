@@ -28,7 +28,7 @@ fov = 90.0
 
 [node name="headRay" type="RayCast" parent="Head/Camera"]
 enabled = true
-cast_to = Vector3( 0, 0, -3.985 )
+cast_to = Vector3( 0, 0, -5 )
 script = ExtResource( 2 )
 
 [node name="debug" type="Label" parent="Head/Camera/headRay"]

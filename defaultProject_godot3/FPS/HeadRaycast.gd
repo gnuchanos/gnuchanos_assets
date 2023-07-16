@@ -13,6 +13,7 @@ func _physics_process(delta):
 			if collider.name == "dynamic": # kinematicbody
 				$debug.text = "dynamic object"
 				collider.rotation.y += 90 * delta
+				collider.translation.z -= 1 * delta
 
 			if collider.name == "static": #statickbody
 				$debug.text = "this is static object"
