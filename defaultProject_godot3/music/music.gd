@@ -2,6 +2,6 @@ extends AudioStreamPlayer
 
 
 
-func _process(delta):
+func _process(_delta):
 	if GlobalVar.fpsVar["musicName"] == "":
 		pass

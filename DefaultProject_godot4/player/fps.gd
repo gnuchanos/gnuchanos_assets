@@ -14,11 +14,13 @@ const  MOUSE_SENSITIVTY = 0.01
 
 @onready var head = $head
 @onready var camera = $head/Camera3D
+@onready var body = $stand
+@onready var DuckRay = $duckRay
 
 # kafa hareketi
-const  BOB_FREQ = 2.0
+const  BOB_FREQ = 1.5
 const BOB_AMP = 0.08
-var t_bob = 8.8
+var t_bob = 5.8
 
 # fov
 const  BASE_FOV = 75.0
@@ -39,11 +41,6 @@ func  _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 	######
 
-#test debug
-func  _process(_delta):
-	$debug.text = str(speed)
-	######
-
 func _physics_process(delta):
 	# gravty and jump
 	if not is_on_floor():
@@ -53,7 +50,14 @@ func _physics_process(delta):
 	######
 
 	# Duck
-	# i don't know how
+	if Input.is_action_pressed("ctrl") and is_on_floor():
+		body.shape.height -=  15.0 * delta
+	else:
+		if not DuckRay.is_colliding():
+			body.shape.height +=  15.0 * delta
+	body.shape.height = clamp(body.shape.height, .05, 2)
+	$debug.text = "X:"+ str(self.position.x) + " | Z:"+ str(self.position.z) + " | Y:"+ str(self.position.y) + " | body.shape.height" + str(body.shape.height)
+
 	#########
 
 	# fast move
