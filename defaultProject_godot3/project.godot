@@ -11,15 +11,19 @@ config_version=4
 [application]
 
 config/name="Default Project Godot 3"
-run/main_scene="res://GUI/mainMenu.tscn"
-boot_splash/image="res://images/wallpaper.png"
+run/main_scene="res://default_DataFiles/GUI/mainMenu.tscn"
+boot_splash/image="res://default_DataFiles/images/wallpaper.png"
 boot_splash/bg_color=Color( 0.109804, 0.0196078, 0.196078, 1 )
-config/icon="res://images/icon.png"
-config/windows_native_icon="res://images/icon.ico"
+config/icon="res://default_DataFiles/images/icon.png"
+config/windows_native_icon="res://default_DataFiles/images/icon.ico"
+
+[audio]
+
+default_bus_layout="res://default_DataFiles/default_bus_layout.tres"
 
 [autoload]
 
-GlobalVar="*res://saveVar/globalVar.gd"
+GlobalVar="*res://default_DataFiles/saveVar/globalVar.gd"
 
 [display]
 
@@ -128,6 +132,20 @@ enter={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777221,"unicode":0,"echo":false,"script":null)
  ]
 }
+f={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":70,"unicode":0,"echo":false,"script":null)
+ ]
+}
+q={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":81,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 
@@ -137,4 +155,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://default_DataFiles/default_env.tres"

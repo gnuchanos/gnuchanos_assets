@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bfbce2ckkk2w1"]
-
-[ext_resource type="Texture2D" uid="uid://bwp4w07ng2fow" path="res://test_object/default.jpg" id="1_mao5f"]
-
-[resource]
-albedo_texture = ExtResource("1_mao5f")
-normal_enabled = true
-normal_texture = ExtResource("1_mao5f")
