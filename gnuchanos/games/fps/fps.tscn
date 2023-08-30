@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3hkj112xpywk"]
+
+[ext_resource type="Script" path="res://games/fps/fps.gd" id="1_op6h7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7nsws"]
+height = 3.53283
+
+[node name="fps" type="CharacterBody3D"]
+script = ExtResource("1_op6h7")
+
+[node name="stand" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79173, 0)
+shape = SubResource("CapsuleShape3D_7nsws")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.54079, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+
+[node name="$duckRay" type="RayCast3D" parent="head"]
+target_position = Vector3(0, 0.425, 0)

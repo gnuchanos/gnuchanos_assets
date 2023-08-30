@@ -1,0 +1,47 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cbq5koxpde1qg"
+path="res://.godot/imported/gnuchanos_ch_purple.glb-3da98fa2d9a63194bdeed9d1abcfd640.scn"
+
+[deps]
+
+source_file="res://data/3d/charachters/gnuchanos_beta/gnuchanos_ch_purple.glb"
+dest_files=["res://.godot/imported/gnuchanos_ch_purple.glb-3da98fa2d9a63194bdeed9d1abcfd640.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"face": {
+"use_external/enabled": true,
+"use_external/path": "res://data/3d/charachters/gnuchanos_beta/faces/faces.tres"
+},
+"gnuchanos": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/default.tres"
+},
+"light1": {
+"use_external/enabled": true,
+"use_external/path": "res://data/materials/light.tres"
+}
+}
+}
+gltf/embedded_image_handling=1

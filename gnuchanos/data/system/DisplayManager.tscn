@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd400nnb7hlpb"]
+
+[ext_resource type="Texture2D" uid="uid://dlp1y7wlry78x" path="res://data/images/displayManager.png" id="1_d732a"]
+[ext_resource type="Script" path="res://data/system/scripts/DisplayManager.gd" id="1_k61il"]
+[ext_resource type="FontFile" uid="uid://yll64qedsgh4" path="res://data/font/OpenSans.ttf" id="2_km2jb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_biwum"]
+texture = ExtResource("1_d732a")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1v2ce"]
+bg_color = Color(0.156863, 0.0352941, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_guyna"]
+bg_color = Color(0.156863, 0.0352941, 0.2, 1)
+
+[node name="DisplayManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k61il")
+metadata/_edit_lock_ = true
+
+[node name="bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_biwum")
+metadata/_edit_lock_ = true
+
+[node name="login" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 157.0
+offset_right = 405.0
+offset_bottom = 264.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="login"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Control2" type="Control" parent="login/VBoxContainer"]
+custom_minimum_size = Vector2(0, 11.26)
+layout_mode = 2
+
+[node name="userName" type="LineEdit" parent="login/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_km2jb")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_1v2ce")
+theme_override_styles/focus = SubResource("StyleBoxFlat_guyna")
+placeholder_text = "user name"
+
+[node name="Control" type="Control" parent="login/VBoxContainer"]
+custom_minimum_size = Vector2(0, 11.26)
+layout_mode = 2
+
+[node name="password" type="LineEdit" parent="login/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_km2jb")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_1v2ce")
+theme_override_styles/focus = SubResource("StyleBoxFlat_guyna")
+placeholder_text = "user password"
+secret = true
+
+[node name="Label" type="Label" parent="login/VBoxContainer"]
+layout_mode = 2
+text = "enter user name and password press enter"

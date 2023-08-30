@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dbiiif6eqgisl"]
+
+[ext_resource type="Texture2D" uid="uid://dlq8m4nq44qhj" path="res://data/3d/charachters/gnuchanos_beta/faces/normal_face.png" id="1_00n4d"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_00n4d")
