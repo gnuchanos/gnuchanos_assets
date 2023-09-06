@@ -2,7 +2,7 @@ from ursina import *
 from ursina.shaders import lit_with_shadows_shader
 
 class GnuChanGE:
-    def __init__(self, title="GnuChanGE Default Text", icon="", borderless=False, developmentMode=True, showSplash=True, 
+    def __init__(self, title="GnuChanGE Default Text", icon="", borderless=False, developmentMode=True, showSplash=False, 
                  vsync=False) -> None:
         window.icon = icon
         self.engine = Ursina(title=title, borderless=borderless, development_mode=developmentMode, show_ursina_splash=showSplash,
@@ -28,32 +28,31 @@ class GnuChanPlayer(Entity):
         self.jumping = False
         self.air_time = 0
 
+        self.box = Entity(model="cube", texture="white_cube", alpha=0.5)
+
         self.traverse_target = scene  # by default, it will collide with everything. change this to change the raycasts' traverse targets.
         self.ignore_list = [self, ]
         if self.gravity:
             self.update_gravity()
-
-    def update_gravity(self):
-        ray = raycast(self.world_position + (0, self.height, 0), self.down, traverse_target=self.traverse_target, ignore=self.ignore_list)
-        if ray.hit:
-            self.y = ray.world_point.y
-            print("yes ray hit now")
-
+   
     def update(self):
+        # move
         self.direction = Vec3(
             self.forward * (held_keys['s'] - held_keys['w'])
             + self.right * (held_keys['q'] - held_keys['e'])
-        ).normalized()  # get the direction we're trying to walk in.
+        ).normalized() 
 
-        self.rotation_y -= held_keys["a"] * 200 * time.dt
-        self.rotation_y += held_keys["d"] * 200 * time.dt
-
-        origin = self.world_position + (self.up * 0.5)  # the ray should start slightly up from the ground so we can walk up slopes or walk over small objects.
+        origin = self.world_position + (self.up * 0.5)
         hit_info = raycast(origin, self.direction, ignore=(self,), distance=0.5, debug=False)
 
         if not hit_info.hit:
             self.position += self.direction * 5 * time.dt
 
+        # rotate player
+        self.rotation_y -= held_keys["a"] * 200 * time.dt
+        self.rotation_y += held_keys["d"] * 200 * time.dt
+      
+        # rotate object
         if self.rotationWay == "x":
             if held_keys["w"]:
                 self.objeRotation.rotation_x += 90 * time.dt
@@ -62,8 +61,16 @@ class GnuChanPlayer(Entity):
         elif self.rotationWay == "y":
             self.objeRotation.rotation_y += 90 * time.dt
 
+        # apple
         if self.gravity:
             self.update_gravity()
+
+    def update_gravity(self):
+        ray = raycast(self.world_position + (0, self.height, 0), self.down, traverse_target=self.traverse_target, ignore=self.ignore_list)
+        if ray.hit:
+            self.y = ray.world_point.y + 0.5
+            self.box.position = self.position
+            #print("yes ray hit now")
 
     def input(self, key):
         if key == 'space':
@@ -83,10 +90,9 @@ class GObject:
     def __init__(self, model="", parent="", texture="", color=color.white, collider="",
                  x=0, z=0, y=0, origin=(0,0,0),
                  rotationX=0, rotationZ=0, rotationY=0) -> None:
-        self.object = Entity()
+        self.object = Entity(shader=lit_with_shadows_shader)
 
-        self.object.shader=lit_with_shadows_shader
-        
+    
         self.object.model = model
         self.object.collider = collider
         self.object.parent = parent

@@ -13,10 +13,12 @@ gnuchanos_nv_face = GObject(parent=gnuchanos_nv, model="gnuchanoıs_fnv_face", t
 
 
 # level design
-workshop = GObject(model="workshop", texture="color_atlas", rotationY=180, collider="mesh").Create
+#workshop = GObject(model="workshop", texture="color_atlas", rotationY=180, collider="mesh").Create
+testFloor = GObject(model="testFloor", texture="brick", color=color.red, collider="mesh")
 
 # player must be this place
 GnuChanPlayer(model=gnuchanos_nv, rotationWay="x", rotationobj=gnuchanos_nv_wheel)
+
 
 
 #camera
