@@ -1,0 +1,22 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://dyhofdnbmws62"]
+
+[ext_resource type="Texture2D" uid="uid://csfboblkohmf6" path="res://data/models/material/sandsloot_2k.hdr" id="1_3pegl"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yy2jp"]
+panorama = ExtResource("1_3pegl")
+
+[sub_resource type="Sky" id="Sky_vef8p"]
+sky_material = SubResource("PanoramaSkyMaterial_yy2jp")
+
+[resource]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_vef8p")
+ssr_fade_in = 0.514185
+ssr_fade_out = 0.535886
+ssao_radius = 5.8
+ssao_intensity = 5.4
+ssao_power = 0.477961
+ssao_detail = 3.1
+ssao_horizon = 0.4
+ssao_light_affect = 0.1

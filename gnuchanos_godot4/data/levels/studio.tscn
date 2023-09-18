@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy88a4084uvvb"]
+
+[ext_resource type="PackedScene" uid="uid://dqutntx0xltrt" path="res://data/players/player.tscn" id="1_rcuwk"]
+[ext_resource type="PackedScene" uid="uid://0p5jy0o520bn" path="res://data/models/levels/studio/gnuchanos show studio.glb" id="2_txbvt"]
+[ext_resource type="Environment" uid="uid://dyhofdnbmws62" path="res://data/postPro.tres" id="3_1xoxy"]
+[ext_resource type="Script" path="res://data/script/Camera3D.gd" id="4_g6ejq"]
+
+[node name="Studio" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("1_rcuwk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.513686, -0.691218)
+
+[node name="gnuchanos show studio" parent="." instance=ExtResource("2_txbvt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.133792)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_1xoxy")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 48.035)
+script = ExtResource("4_g6ejq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.64377, 7.44221)
+light_energy = 3.0
+omni_range = 30.6132
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.64377, 36.6813)
+light_energy = 3.0
+omni_range = 30.6132

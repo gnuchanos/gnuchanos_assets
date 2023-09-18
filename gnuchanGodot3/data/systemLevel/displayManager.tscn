@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://data/image/displayManager.png" type="Texture" id=1]
+[ext_resource path="res://data/font/defaultFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://data/systemLevel/scripts/displayManager.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 1280, 720 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0426913, 0.00715733, 0.0771484, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0901961, 0.00392157, 0.172549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0901961, 0.00392157, 0.172549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.105382, 0.0532236, 0.155273, 1 )
+
+[node name="displayManager" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="loginPanel" type="Panel" parent="."]
+margin_left = 26.0
+margin_top = 86.0
+margin_right = 393.0
+margin_bottom = 544.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="loginPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="userName" type="LineEdit" parent="loginPanel/VBoxContainer"]
+margin_right = 367.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+placeholder_text = "User Name"
+
+[node name="userPassword" type="LineEdit" parent="loginPanel/VBoxContainer"]
+margin_top = 32.0
+margin_right = 367.0
+margin_bottom = 60.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+secret = true
+placeholder_text = "User Password"
+
+[node name="warn" type="TextEdit" parent="loginPanel/VBoxContainer"]
+margin_top = 64.0
+margin_right = 367.0
+margin_bottom = 458.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_colors/font_color_readonly = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/read_only = SubResource( 5 )
+readonly = true

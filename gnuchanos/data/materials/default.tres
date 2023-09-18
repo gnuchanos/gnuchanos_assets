@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c60rhct35k2da"]
-
-[ext_resource type="Texture2D" uid="uid://dayoecugmfmow" path="res://data/materials/defaultColorPalette.png" id="1_wv2jt"]
-
-[resource]
-diffuse_mode = 3
-specular_mode = 1
-albedo_texture = ExtResource("1_wv2jt")
-metallic_specular = 0.0

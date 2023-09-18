@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceqmhl28xn802"]
+
+[ext_resource type="PackedScene" uid="uid://dqutntx0xltrt" path="res://data/players/player.tscn" id="1_2r6ou"]
+[ext_resource type="Environment" uid="uid://dyhofdnbmws62" path="res://data/postPro.tres" id="1_lpa8r"]
+[ext_resource type="PackedScene" uid="uid://cstbykqs1q070" path="res://data/models/levels/workshop/workshop.gltf" id="1_opljj"]
+[ext_resource type="Script" path="res://data/script/Camera3D.gd" id="2_dxpm8"]
+
+[node name="workshop" type="Node3D"]
+
+[node name="workshop" parent="." instance=ExtResource("1_opljj")]
+
+[node name="player" parent="." instance=ExtResource("1_2r6ou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.568206, 3.61466)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_lpa8r")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 28.28)
+script = ExtResource("2_dxpm8")

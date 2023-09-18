@@ -1,0 +1,111 @@
+
+
+
+
+
+
+
+
+# file system
+files|
+    GnuChanGE|
+        |__init__.py
+    models|
+        |studio
+        |testlevel
+        |workshop
+        |players
+    models_compressed|
+    main.py
+    mainmenu.py
+    studio.py
+    vPlayer.py
+    workshop.py
+
+    
+# game system
+Game Design|
+    Class MainMenu
+        |Studio Class
+            |PlayerClass
+                |Actor Animation
+                    |Player Beta
+                    |Player NV
+        |workshop Class
+            |PlayerClass
+                |Actor Animation
+                    |Player Beta
+                    |Player NV
+
+
+# example
+button click
+self.optionsButton.on_click = options
+
+how change Scene
+    scene.clear()
+    newsceneClass() -> Entity
+
+how move
+    obj.y\x\z
+    obj.rotation_y\x\z
+    obj.scale_y\x\z
+
+Area System and change scene example | studio level to workshop
+    self.player = PlayerClass() ---> self.collider="box" --> player Entitiy
+    self.changeScene() ---> collider="box"  --> cube Entitiy but have collider
+    self.player.ignore = [self.player, self.changeScene] ---> studio level 
+    def update():
+        self.player.intersects(self.changeScene):
+            scene.clear() --> first clear scene
+            workshop() --> add new scene
+
+raycast system
+self.playerRaycast = raycast(self.player.forward, direction=(0,0,1), distance=2, traverse_target=scene, ignore=self.player.ignore_list, debug=False)
+
+first example is .hit
+if self.playerRaycast.hit:
+    print(self.playerRaycast.hit)
+else:
+    print("no")
+
+
+
+
+
+
+
+
+
+
+question
+
+i try do default player.model for every scene change remember but not working like this
+
+globalvar.py
+```
+gnBETA = False
+gnNV = True```
+
+
+scenes.py
+workshop Class and studio class same scipt
+        # this is player
+        self.player = GnuChanPlayer()
+        # player model
+        global gnBETA, gnNV
+        if gnBETA == True:
+            self.player.model = GnuChanOSNV()
+            gnNV = False
+            gnBETA = True
+        if gnNV == True:
+            self.player.model = GnuChanOSNV()
+            gnNV = True
+            gnBETA = False
+
+if scene.clear() work change scene gnBETA become default not change
+```
+    def update():
+        if self.player.intersects(self.portal):
+            scene.clear()
+            studio()```

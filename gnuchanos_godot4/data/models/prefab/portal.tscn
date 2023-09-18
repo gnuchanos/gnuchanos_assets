@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b00cfeisqhhc0"]
+
+[ext_resource type="PackedScene" uid="uid://orklw3q0ifad" path="res://data/models/ekstra/portal.glb" id="1_g7g2y"]
+
+[node name="portal" type="Node3D"]
+
+[node name="portal" parent="." instance=ExtResource("1_g7g2y")]
