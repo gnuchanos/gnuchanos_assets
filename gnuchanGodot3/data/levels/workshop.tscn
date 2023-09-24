@@ -22,6 +22,7 @@ glow_bloom = 0.35
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.0266746, 2.76754 )
 
 [node name="workshop" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1.49566, 0, 0, 0, 1.49566, 0, 0, 0, 1.49566, 0, 0, 0 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
@@ -48,4 +49,5 @@ script = ExtResource( 4 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8444, 12.249 )
+visible = false
 omni_range = 25.264

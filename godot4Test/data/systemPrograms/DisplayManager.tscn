@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8do3miq3uma8"]
+
+[ext_resource type="FontFile" uid="uid://bladlchox5e3y" path="res://data/font/OpenSans-Italic-VariableFont_wdth,wght.ttf" id="1_f6b51"]
+[ext_resource type="Script" path="res://data/systemPrograms/Script/DisplayManager.gd" id="1_ihk8w"]
+[ext_resource type="Texture2D" uid="uid://dupw1avqsviw" path="res://data/image/displayManager.png" id="1_qv6vb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tekrc"]
+texture = ExtResource("1_qv6vb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqgg7"]
+bg_color = Color(0.352941, 0.0941176, 0.603922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qik8"]
+bg_color = Color(0.235294, 0.0352941, 0.423529, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14oya"]
+bg_color = Color(0.235294, 0.0352941, 0.423529, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5o3w8"]
+bg_color = Color(0.0392157, 0.00392157, 0.101961, 1)
+
+[node name="DisplayManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ihk8w")
+metadata/_edit_lock_ = true
+
+[node name="bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tekrc")
+metadata/_edit_lock_ = true
+
+[node name="loginPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 162.82
+offset_right = 360.0
+offset_bottom = -161.18
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dqgg7")
+metadata/_edit_lock_ = true
+
+[node name="panel" type="VBoxContainer" parent="loginPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="userName" type="LineEdit" parent="loginPanel/panel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0.517647, 0.94902, 1)
+theme_override_colors/font_placeholder_color = Color(0.737255, 0.517647, 0.94902, 1)
+theme_override_fonts/font = ExtResource("1_f6b51")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8qik8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_14oya")
+placeholder_text = "User Name:"
+
+[node name="userPassword" type="LineEdit" parent="loginPanel/panel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0.517647, 0.94902, 1)
+theme_override_colors/font_placeholder_color = Color(0.737255, 0.517647, 0.94902, 1)
+theme_override_fonts/font = ExtResource("1_f6b51")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_8qik8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_14oya")
+placeholder_text = "User Password:"
+
+[node name="TextEdit" type="TextEdit" parent="loginPanel/panel"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/read_only = SubResource("StyleBoxFlat_5o3w8")
+editable = false

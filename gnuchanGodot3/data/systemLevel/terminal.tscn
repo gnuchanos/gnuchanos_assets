@@ -20,9 +20,11 @@ bg_color = Color( 0.121569, 0.00392157, 0.184314, 1 )
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.121569, 0.00392157, 0.184314, 1 )
 
-[node name="WindowDialog" type="WindowDialog"]
-margin_right = 610.0
-margin_bottom = 451.0
+[node name="terminal" type="WindowDialog"]
+margin_left = 173.0
+margin_top = 69.0
+margin_right = 783.0
+margin_bottom = 520.0
 custom_colors/title_color = Color( 1, 0.937255, 0.937255, 1 )
 custom_fonts/title_font = ExtResource( 1 )
 custom_styles/panel = SubResource( 1 )

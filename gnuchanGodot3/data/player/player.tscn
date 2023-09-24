@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://data/3d/players/gnuchanBeta/gnuchanBeta.glb" type="PackedScene" id=1]
+[ext_resource path="res://data/3d/players/gnuchanos_ch_purple.glb" type="PackedScene" id=1]
 [ext_resource path="res://data/3d/players/gnuchanBeta/idl_tablet_start.anim" type="Animation" id=2]
 [ext_resource path="res://data/3d/players/gnuchanBeta/idl_tablet_loop.anim" type="Animation" id=3]
 [ext_resource path="res://data/3d/players/gnuchanBeta/idl_tablet_ends.anim" type="Animation" id=4]
@@ -76,7 +76,7 @@ states/idl_think_loop/position = Vector2( 150.333, -18.3333 )
 states/idl_think_start/node = SubResource( 8 )
 states/idl_think_start/position = Vector2( 150.21, 48 )
 transitions = [ "idl_loop", "idl_think_start", SubResource( 9 ), "idl_think_start", "idl_think_loop", SubResource( 10 ), "idl_think_loop", "idl_think_end", SubResource( 11 ), "idl_think_end", "idl_loop", SubResource( 12 ), "idl_loop", "idl_tablet_start", SubResource( 13 ), "idl_tablet_start", "idl_tablet_loop", SubResource( 14 ), "idl_tablet_loop", "idl_tablet_ends", SubResource( 15 ), "idl_tablet_ends", "idl_loop", SubResource( 16 ) ]
-graph_offset = Vector2( -86, -116 )
+graph_offset = Vector2( -127, -51 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=18]
 
