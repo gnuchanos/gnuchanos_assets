@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dupfcwfcfp2pk"]
-
-[ext_resource type="Texture2D" uid="uid://c5aoia2imm48y" path="res://data/3d/levels/workshop/workshop_color_atlas.png" id="1_a28c0"]
-
-[resource]
-transparency = 1
-albedo_texture = ExtResource("1_a28c0")
-texture_filter = 0
